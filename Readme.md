@@ -1,6 +1,4 @@
 
-
-```markdown
 # Music Discovery API
 
 A production-grade RESTful API built with Django, Django REST Framework, Celery, Redis, PostgreSQL, and Nginx. The application provides music recommendation tracking, user activity analytics, and asynchronous background tasks.
@@ -9,30 +7,30 @@ A production-grade RESTful API built with Django, Django REST Framework, Celery,
 
 ## Candidate Submission Details
 
-* **Current / Last Drawn CTC:** [NA]
-* **Notice Period:** [Immediate / 15 Days]
-* **Current Location:** Baner Pune, India
-* **Willingness to work from Baner office:** Yes
+- **Current / Last Drawn CTC:** [NA]
+- **Notice Period:** [Immediate / 15 Days]
+- **Current Location:** Baner Pune, India
+- **Willingness to work from Baner office:** Yes
 
 ---
 
 ## Features
 
-* **User Profiles & Activity Tracking:** Full CRUD endpoints for managing user profiles, favorite genres, and logging activity data.
-* **Asynchronous Recommendations:** Background recalculations for recommendations powered by Celery workers and Redis.
-* **Analytics Engine:** Summary and trend analytics utilizing Django aggregation queries (`Count`, `Q`).
-* **Caching Layer:** Redis integration for response caching and fast retrieval.
-* **Production Stack:** Fully containerized setup with Docker, Docker Compose, and Nginx reverse proxy.
+- **User Profiles & Activity Tracking:** Full CRUD endpoints for managing user profiles, favorite genres, and logging activity data.
+- **Asynchronous Recommendations:** Background recalculations for recommendations powered by Celery workers and Redis.
+- **Analytics Engine:** Summary and trend analytics utilizing Django aggregation queries (`Count`, `Q`).
+- **Caching Layer:** Redis integration for response caching and fast retrieval.
+- **Production Stack:** Fully containerized setup with Docker, Docker Compose, and Nginx reverse proxy.
 
 ---
 
 ## Tech Stack
 
-* **Framework:** Python 3.10+, Django, Django REST Framework
-* **Database:** PostgreSQL
-* **Task Queue & Caching:** Celery, Redis
-* **Web Server:** Nginx
-* **Containerization:** Docker, Docker Compose
+- **Framework:** Python 3.10+, Django, Django REST Framework
+- **Database:** PostgreSQL
+- **Task Queue & Caching:** Celery, Redis
+- **Web Server:** Nginx
+- **Containerization:** Docker, Docker Compose
 
 ---
 
@@ -40,7 +38,7 @@ A production-grade RESTful API built with Django, Django REST Framework, Celery,
 
 ### Prerequisites
 
-* [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
 
 ---
 
@@ -52,8 +50,6 @@ To build images, start containers, and apply database migrations automatically:
 
 ```bash
 make setup
-
-```
 
 Or using Docker Compose directly:
 
