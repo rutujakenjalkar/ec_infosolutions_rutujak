@@ -1,0 +1,220 @@
+{
+  "info": {
+    "_postman_id": "003c12c4-7b9f-488d-b190-bf93bac4d035",
+    "name": "Music Discovery API - EC Infosolutions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57252090",
+    "_collection_link": "https://go.postman.co/collection/57252090-003c12c4-7b9f-488d-b190-bf93bac4d035?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Create User Profile",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"John Hull\",\r\n    \"email\": \"john@example.com\",\r\n    \"favorite_genres\": [\"pop\", \"rock\"],\r\n    \"favorite_artists\": [\"Coldplay\"],\r\n    \"moods\": [\"energetic\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3.Get Specific User Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/users/7/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "users",
+            "7",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4.Trigger Recommendation Refresh",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/recommendations/6/refresh/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "recommendations",
+            "6",
+            "refresh",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get Cached Recommendations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/recommendations/6/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "recommendations",
+            "6",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Record User Activity Event",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\": 4,\r\n    \"track_name\": \"Yellow\",\r\n    \"artist_name\": \"Coldplay\",\r\n    \"action\": \"play\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/activity/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "activity",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7. Global Analytics Summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/analytics/summary/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "analytics",
+            "summary",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8. Global Analytics Trends",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/analytics/trends/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "analytics",
+            "trends",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9. Personalized User Analytics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/analytics/user/4/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "analytics",
+            "user",
+            "4",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

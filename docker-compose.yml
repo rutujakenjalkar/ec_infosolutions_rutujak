@@ -1,0 +1,60 @@
+
+
+services:
+  # 1. The PostgreSQL Database Container
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: music_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. The Redis Caching & Message Broker Container
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # 3. Our Django Web Application Container
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+  
+
+  celery:
+    build: .
+    # IMPORTANT: Replace 'your_project_name' with the exact name of the folder where your settings.py and celery.py live!
+    command: celery -A echobase worker -l info
+    volumes:
+      - .:/app  # Assuming your code is in /app inside the container
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - db
+
+volumes:
+  postgres_data:
+
