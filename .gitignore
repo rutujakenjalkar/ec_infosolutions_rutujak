@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Database & Storage
+*.sqlite3
+db.sqlite3
+
+# IDE / OS specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
