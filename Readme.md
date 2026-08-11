@@ -50,7 +50,7 @@ To build images, start containers, and apply database migrations automatically:
 
 ```bash
 make setup
-
+```
 Or using Docker Compose directly:
 
 ```bash
